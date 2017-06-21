@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,17 +19,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="miniVolume.png" maximumValueImage="maxVolume.png" translatesAutoresizingMaskIntoConstraints="NO" id="FcW-Hn-YNc">
-                                <rect key="frame" x="14" y="225" width="292" height="31"/>
+                                <rect key="frame" x="14" y="318.5" width="347" height="31"/>
                                 <connections>
                                     <action selector="sld_volume:" destination="BYZ-38-t0r" eventType="valueChanged" id="GAg-kg-XXV"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSO-NE-wAB">
-                                <rect key="frame" x="145" y="192" width="30" height="25"/>
+                                <rect key="frame" x="172.5" y="285.5" width="30" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="KgS-RQ-KZE"/>
                                     <constraint firstAttribute="width" constant="30" id="kc5-U9-f80"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="323-k3-wIn">
-                                <rect key="frame" x="16" y="158" width="51" height="21"/>
+                                <rect key="frame" x="16" y="251.5" width="51" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="N6r-dy-dym"/>
                                     <constraint firstAttribute="width" constant="51" id="mG2-Dz-Ta0"/>
@@ -50,25 +50,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E5-0T-a7P">
-                                <rect key="frame" x="259" y="158.5" width="45" height="20.5"/>
+                                <rect key="frame" x="314" y="251.5" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mR9-cZ-iHz">
-                                <rect key="frame" x="62" y="153" width="196" height="31"/>
+                                <rect key="frame" x="62" y="246.5" width="251" height="31"/>
                                 <connections>
                                     <action selector="sld_timeSong:" destination="BYZ-38-t0r" eventType="valueChanged" id="bVl-U2-e8f"/>
                                 </connections>
                             </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEv-sb-heT">
+                                <rect key="frame" x="312" y="282.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="action_replay:" destination="BYZ-38-t0r" eventType="valueChanged" id="QlS-rb-81n"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FcW-Hn-YNc" firstAttribute="top" secondItem="323-k3-wIn" secondAttribute="bottom" constant="46" id="4aT-dY-5KJ"/>
                             <constraint firstItem="FcW-Hn-YNc" firstAttribute="top" secondItem="4E5-0T-a7P" secondAttribute="bottom" constant="46" id="5hn-C3-2ad"/>
+                            <constraint firstAttribute="trailing" secondItem="wEv-sb-heT" secondAttribute="trailing" constant="14" id="6CX-w9-lqF"/>
                             <constraint firstItem="FcW-Hn-YNc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9vZ-u5-fsi"/>
                             <constraint firstItem="OSO-NE-wAB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EBK-ZX-I8O"/>
                             <constraint firstItem="FcW-Hn-YNc" firstAttribute="top" secondItem="OSO-NE-wAB" secondAttribute="bottom" constant="8" id="EOH-Kq-dwr"/>
+                            <constraint firstItem="FcW-Hn-YNc" firstAttribute="top" secondItem="wEv-sb-heT" secondAttribute="bottom" constant="5" id="FLs-RK-ZXx"/>
                             <constraint firstItem="FcW-Hn-YNc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gdg-I0-8ts"/>
                             <constraint firstItem="4E5-0T-a7P" firstAttribute="leading" secondItem="mR9-cZ-iHz" secondAttribute="trailing" constant="3" id="IcO-QF-6h6"/>
                             <constraint firstItem="FcW-Hn-YNc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LG1-Gl-GUz"/>
@@ -85,11 +93,12 @@
                         <outlet property="lbl_timeSong" destination="4E5-0T-a7P" id="L0L-pj-wzk"/>
                         <outlet property="sld_Duration" destination="mR9-cZ-iHz" id="hcF-Uo-OXs"/>
                         <outlet property="slder_volume" destination="FcW-Hn-YNc" id="KWt-da-NYz"/>
+                        <outlet property="sw_replay" destination="wEv-sb-heT" id="4hs-tf-hjt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1358" y="-378"/>
+            <point key="canvasLocation" x="-1820" y="-234"/>
         </scene>
     </scenes>
     <resources>

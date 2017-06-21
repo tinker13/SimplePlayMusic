@@ -8,13 +8,15 @@
 
 import UIKit
 import AVFoundation
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var btn_Play: UIButton!
     @IBOutlet weak var slder_volume: UISlider!
     @IBOutlet weak var lbl_timeLeft: UILabel!
     @IBOutlet weak var lbl_timeSong: UILabel!
     @IBOutlet weak var sld_Duration: UISlider!
+    @IBOutlet weak var sw_replay: UISwitch!
+    
     
     var audio = AVAudioPlayer()
     var count = 0
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
         addThumbImageForSlider()
         sld_Duration.setValue(0.00, animated: true)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimeLeft), userInfo: nil, repeats: true)
+        audio.delegate = self
     }
     
     func addThumbImageForSlider()
@@ -48,9 +51,7 @@ class ViewController: UIViewController {
         let minTotal = totalTime / 60
         let secTotal = totalTime - minTotal * 60
         lbl_timeSong.text = String(format: "%2d:%02d", minTotal, secTotal)
-        
-        
-    }
+     }
 
     @IBAction func action_play(_ sender: Any) {
         if count == 0 {
@@ -65,13 +66,30 @@ class ViewController: UIViewController {
         }
     }
 
-
+    @IBAction func action_replay(_ sender: Any) {
+        replay()
+    }
+    
+    
+    
     @IBAction func sld_volume(_ sender: Any) {
         audio.volume = (sender as AnyObject).value
     }
     
     @IBAction func sld_timeSong(_ sender: UISlider) {
         audio.currentTime = TimeInterval(Float(sender.value) * Float(audio.duration))
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        btn_Play.setImage(UIImage(named: "play.png"), for: .normal)
+    }
+    
+    func replay() {
+        if (sw_replay.isOn == true) {
+            audio.numberOfLoops = -1
+        }else{
+            audio.numberOfLoops = 0
+        }
     }
     
 
